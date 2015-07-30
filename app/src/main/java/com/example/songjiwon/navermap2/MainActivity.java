@@ -47,10 +47,9 @@ public class MainActivity extends ActionBarActivity {
     {
         Intent intent = new Intent(getApplicationContext(),MapActivity.class);
 
-//        //준수형이 해주신거 이런식으로 바꿔야해intent.putExtra("location", 1);
-//        //ㄴㄴ안되는거intent.putExtras("location2", Location.GANGNAMGU_LAT, Location.GANGNAMGU_LNG);
-//        /////ㄴㄴ이게 젤좋은데 안되는것같다intent.putExtra("location", (Parcelable)Location.setLocation(1));
-//
+//준수형이 해주신거 이런식으로 바꿔야해intent.putExtra("location", 1);
+/////ㄴㄴ이게 젤좋은데 안되는것같다intent.putExtra("location", (Parcelable)Location.setLocation(1));
+
         intent.putExtra("LNG", Location.GANGNAMGU_LNG);
         intent.putExtra("LAT", Location.GANGNAMGU_LAT);
 

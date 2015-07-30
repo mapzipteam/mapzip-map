@@ -10,132 +10,132 @@ public class Location {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////
 
-    ///¼­¿ï Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///ì„œìš¸ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double SEOUL_LNG = 126.9783881;
     public static final double SEOUL_LAT = 37.5666102;
     public static final NGeoPoint SEOUL = new NGeoPoint(SEOUL_LNG, SEOUL_LAT);
 
-    ///1.°­³²±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///1.ê°•ë‚¨êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double GANGNAMGU_LNG = 127.0578302;
     public static final double GANGNAMGU_LAT = 37.4943915;
     public static final NGeoPoint GANGNAMGU = new NGeoPoint(GANGNAMGU_LNG, GANGNAMGU_LAT);
 
-    ///2.°­µ¿±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///2.ê°•ë™êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double GANGDONGGU_LNG =127.1407307;
     public static final double GANGDONGGU_LAT = 37.5405744;
     public static final NGeoPoint GANGDONGGU = new NGeoPoint(GANGDONGGU_LNG, GANGDONGGU_LAT);
 
-    ///3.°­ºÏ±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///3.ê°•ë¶êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double GANGBOOKGU_LNG = 127.0245884;
     public static final double GANGBOOKGU_LAT = 37.6296044;
     public static final NGeoPoint GANGBOOKGU = new NGeoPoint(GANGBOOKGU_LNG,GANGBOOKGU_LAT);
 
-    ///4.°­¼­±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///4.ê°•ì„œêµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double GANGSEOGU_LNG = 126.8246768;
     public static final double GANGSEOGU_LAT = 37.560284;
     public static final NGeoPoint GANGSEOGU= new NGeoPoint(GANGSEOGU_LNG, GANGSEOGU_LAT);
 
-    ///5.°ü¾Ç±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///5.ê´€ì•…êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double GWANAKGU_LNG = 126.9413443;
     public static final double GWANAKGU_LAT = 37.4768714;
     public static final NGeoPoint GWANAKGU= new NGeoPoint(GWANAKGU_LNG, GWANAKGU_LAT);
 
-    ///6.±¤Áø±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///6.ê´‘ì§„êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double GWANGJINGU_LNG = 127.0809226;
     public static final double GWANGJINGU_LAT = 37.5499163;
     public static final NGeoPoint GWANGJINGU= new NGeoPoint(GWANGJINGU_LNG, GWANGJINGU_LAT);
 
-    ///7.±¸·Î±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///7.êµ¬ë¡œêµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double GUROGU_LNG = 126.8567647;
     public static final double GUROGU_LAT = 37.4969993;
     public static final NGeoPoint GUROGU= new NGeoPoint(GUROGU_LNG, GUROGU_LAT);
 
-    ///8.±İÃµ±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///8.ê¸ˆì²œêµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double GEUMCHEONGU_LNG = 126.9004372;
     public static final double GEUMCHEONGU_LAT = 37.4656049;
     public static final NGeoPoint  GEUMCHEONGU= new NGeoPoint(GEUMCHEONGU_LNG, GEUMCHEONGU_LAT);
 
-    ///9.³ë¿ø±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///9.ë…¸ì›êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double NOWONGU_LNG = 127.0732178;
     public static final double NOWONGU_LAT = 37.6606188;
     public static final NGeoPoint NOWONGU= new NGeoPoint(NOWONGU_LNG, NOWONGU_LAT);
 
-    ///10.µµºÀ±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///10.ë„ë´‰êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double DOBONGGU_LNG = 127.0389157;
     public static final double DOBONGGU_LAT = 37.6580084;
     public static final NGeoPoint DOBONGGU= new NGeoPoint(DOBONGGU_LNG, DOBONGGU_LAT);
 
-    ///11.µ¿´ë¹®±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///11.ë™ëŒ€ë¬¸êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double DONGDAEMUNGU_LNG = 127.0553052;
     public static final double DONGDAEMUNGU_LAT = 37.5908223;
     public static final NGeoPoint DONGDAEMUNGU= new NGeoPoint(DONGDAEMUNGU_LNG, DONGDAEMUNGU_LAT);
 
-    ///12.µ¿ÀÛ±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///12.ë™ì‘êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double DONGJAKGU_LNG = 126.9540373;
     public static final double DONGJAKGU_LAT = 37.5036154;
     public static final NGeoPoint DONGJAKGU= new NGeoPoint(DONGJAKGU_LNG, DONGJAKGU_LAT);
 
-    ///13.¸¶Æ÷±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///13.ë§ˆí¬êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double MAPOGU_LNG = 126.9101051;
     public static final double MAPOGU_LAT = 37.5561133;
     public static final NGeoPoint MAPOGU= new NGeoPoint(MAPOGU_LNG, MAPOGU_LAT);
 
-    ///14.¼­´ë¹®±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///14.ì„œëŒ€ë¬¸êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double SEODAEMUNGU_LNG = 126.9368;
     public static final double SEODAEMUNGU_LAT = 37.579225;
     public static final NGeoPoint SEODAEMUNGU= new NGeoPoint(SEODAEMUNGU_LNG, SEODAEMUNGU_LAT);
 
-    ///15.¼­ÃÊ±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///15.ì„œì´ˆêµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double SEOCHOGU_LNG = 127.0383435;
     public static final double SEOCHOGU_LAT = 37.4701694;
     public static final NGeoPoint SEOCHOGU= new NGeoPoint(SEOCHOGU_LNG, SEOCHOGU_LAT);
 
-    ///16.¼ºµ¿±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///16.ì„±ë™êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double SEONGDONGGU_LNG =127.0375328;
     public static final double SEONGDONGGU_LAT = 37.5534859;
     public static final NGeoPoint SEONGDONGGU = new NGeoPoint(SEONGDONGGU_LNG, SEONGDONGGU_LAT);
 
-    ///17.¼ººÏ±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///17.ì„±ë¶êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double SEONGBUKGU_LNG = 127.0247433;
     public static final double SEONGBUKGU_LAT = 37.6008189;
     public static final NGeoPoint SEONGBUKGU= new NGeoPoint(SEONGBUKGU_LNG, SEONGBUKGU_LAT);
 
-    ///18.¼ÛÆÄ±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///18.ì†¡íŒŒêµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double SONGPAGU_LNG = 127.1144833;
     public static final double SONGPAGU_LAT = 37.5059696;
     public static final NGeoPoint SONGPAGU= new NGeoPoint(SONGPAGU_LNG, SONGPAGU_LAT);
 
-    ///19.¾çÃµ±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///19.ì–‘ì²œêµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double YANGCHEONGU_LNG = 126.8528105;
     public static final double YANGCHEONGU_LAT = 37.5203064;
     public static final NGeoPoint YANGCHEONGU= new NGeoPoint(YANGCHEONGU_LNG, YANGCHEONGU_LAT);
 
-    ///20.¿µµîÆ÷±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///20.ì˜ë“±í¬êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double YEONGDEUNGPOGU_LNG = 126.9115844;
     public static final double YEONGDEUNGPOGU_LAT = 37.5214566;
     public static final NGeoPoint YEONGDEUNGPOGU= new NGeoPoint(YEONGDEUNGPOGU_LNG, YEONGDEUNGPOGU_LAT);
 
-    ///21.¿ë»ê±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///21.ìš©ì‚°êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double YONGSANGU_LNG = 126.972968;
     public static final double YONGSANGU_LAT = 37.5345394;
     public static final NGeoPoint YONGSANGU= new NGeoPoint(YONGSANGU_LNG, YONGSANGU_LAT);
 
-    ///22.ÀºÆò±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///22.ì€í‰êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double EUNPYEONGGU_LNG = 126.9268409;
     public static final double EUNPYEONGGU_LAT = 37.616171;
     public static final NGeoPoint EUNPYEONGGU= new NGeoPoint(EUNPYEONGGU_LNG, EUNPYEONGGU_LAT);
 
-    ///23.Á¾·Î±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///23.ì¢…ë¡œêµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double JONGNOGU_LNG = 126.98979;
     public static final double JONGNOGU_LAT = 37.5769244;
     public static final NGeoPoint JONGNOGU= new NGeoPoint(JONGNOGU_LNG, JONGNOGU_LAT);
 
-    ///24.Áß±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///24.ì¤‘êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double JUNGGU_LNG = 126.997705;
     public static final double JUNGGU_LAT = 37.5593956;
     public static final NGeoPoint JUNGGU= new NGeoPoint(JUNGGU_LNG, JUNGGU_LAT);
 
-    ///25.Áß¶û±¸ Áß½ÉÁÂÇ¥ °æµµ(LNG), À§µµ(LAT), NGeoPoint ÁÂÇ¥
+    ///25.ì¤‘ë‘êµ¬ ì¤‘ì‹¬ì¢Œí‘œ ê²½ë„(LNG), ìœ„ë„(LAT), NGeoPoint ì¢Œí‘œ
     public static final double JUNGNAMGGU_LNG = 127.0912262;
     public static final double JUNGNAMGGU_LAT = 37.5972706;
     public static final NGeoPoint JUNGNAMGGU= new NGeoPoint(JUNGNAMGGU_LNG, JUNGNAMGGU_LAT);

@@ -25,6 +25,10 @@
             android:name=".MapActivity">
 
         </activity>
+
+        <activity android:name=".ReviewActivity">
+
+        </activity>
     </application>
 
 </manifest>

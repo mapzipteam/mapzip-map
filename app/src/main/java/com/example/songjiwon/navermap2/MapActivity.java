@@ -1,8 +1,10 @@
 package com.example.songjiwon.navermap2;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -12,17 +14,25 @@ import android.widget.Toast;
 
 import com.nhn.android.maps.NMapActivity;
 import com.nhn.android.maps.NMapController;
+import com.nhn.android.maps.NMapOverlay;
+import com.nhn.android.maps.NMapOverlayItem;
 import com.nhn.android.maps.NMapView;
 import com.nhn.android.maps.NMapView.OnMapStateChangeListener;
 import com.nhn.android.maps.NMapView.OnMapViewTouchEventListener;
 import com.nhn.android.maps.maplib.NGeoPoint;
 import com.nhn.android.maps.nmapmodel.NMapError;
+import com.nhn.android.maps.overlay.NMapPOIdata;
+import com.nhn.android.maps.overlay.NMapPOIitem;
+import com.nhn.android.mapviewer.overlay.NMapCalloutOverlay;
+import com.nhn.android.mapviewer.overlay.NMapOverlayManager;
+import com.nhn.android.mapviewer.overlay.NMapPOIdataOverlay;
 
 import static com.example.songjiwon.navermap2.Location.GANGNAMGU;
 import static com.example.songjiwon.navermap2.Location.SEOUL;
 
 
-public class MapActivity extends NMapActivity implements NMapView.OnMapStateChangeListener, NMapView.OnMapViewTouchEventListener {
+public class MapActivity extends NMapActivity implements NMapView.OnMapStateChangeListener, NMapView.OnMapViewTouchEventListener, /*이제부턴 오버레이 아이콘*/NMapOverlayManager.OnCalloutOverlayListener
+{
     public static final String API_KEY = "d38869cf3ca862bf9e45d02b6ec3faeb";
     NMapView mMapView = null;
     NMapController mMapController = null;
@@ -31,12 +41,40 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
     NGeoPoint current_point = SEOUL;
 
    /////////////////////// private int GU_NUM = 0;
+    //여기서부턴 오버레이 아이템
+
+    NMapViewerResourceProvider mMapViewerResourceProvider = null;
+    NMapOverlayManager mOverlayManager;
+    NMapPOIdataOverlay.OnStateChangeListener onPOIdataStateChangeListener = new NMapPOIdataOverlay.OnStateChangeListener()
+    {
+        public void onCalloutClick(NMapPOIdataOverlay poiDataOverlay, NMapPOIitem item)
+        {
+            Intent intent = new Intent(getApplicationContext(), ReviewActivity.class);
+            startActivity(intent);
+        }
+
+        public void onFocusChanged(NMapPOIdataOverlay poiDataOverlay, NMapPOIitem item)
+        {
+            if(item != null)
+            {
+                Log.i("NMAP", "onFocusChanged: "+ item.toString());
+            }
+            else
+            {
+                Log.i("NMAP", "onFocusChanged: ");
+            }
+        }
+
+    };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         ////////////////////GU_NUM = getIntent().getExtras().getInt("location");
         //ㄴㄴ이건 안될것같다........으어current_point =(NGeoPoint)(getIntent().getExtras().getInt("location"));
+        ///준수형 코드 int b = getIntent().getExtras().getInt("location");
 
         //이거 해보자!!!
         current_point = new NGeoPoint(getIntent().getExtras().getDouble("LNG"), getIntent().getExtras().getDouble("LAT"));
@@ -68,9 +106,38 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
         mMapView.setBuiltInZoomControls(true, null);
 
         mMapController = mMapView.getMapController();
+        //여기까지가 오버레이 아이콘 넣기전
 
-        ///int b = getIntent().getExtras().getInt("location");
 
+        mMapViewerResourceProvider = new NMapViewerResourceProvider(this);
+
+        mOverlayManager = new NMapOverlayManager(this,  mMapView, mMapViewerResourceProvider);
+
+        int markerId = NMapPOIflagType.PIN;
+
+        NMapPOIdata poiData = new NMapPOIdata(5, mMapViewerResourceProvider);
+
+        poiData.beginPOIdata(5);
+
+        poiData.addPOIitem(127.0716985, 37.5430318, "우마이도", markerId, 0);
+        poiData.addPOIitem(126.9206943, 37.5482579, "부엉이 돈까스", markerId, 0);
+        poiData.addPOIitem(126.9191225, 37.550611, "친구네 집빈날", markerId, 0);
+        poiData.addPOIitem(126.9436279, 37.5402453, "박달재", markerId, 0);
+        poiData.addPOIitem(127.068504, 37.5384298, "매화반점", markerId, 0);
+        poiData.addPOIitem(127.027144, 37.5023993, "리골레토 사카고 피자", markerId, 0);
+        poiData.addPOIitem(127.027197, 37.5021116, "카니발 피자", markerId, 0);
+        poiData.addPOIitem(126.953024, 37.495872, "파동추야", markerId, 0);
+        poiData.addPOIitem(126.9572027, 37.4946909, "숯가마 숯불구이", markerId, 0);
+
+        poiData.endPOIdata();
+
+        NMapPOIdataOverlay poiDataOverlay = /**/mOverlayManager.createPOIdataOverlay(poiData, null);
+
+        poiDataOverlay.showAllPOIdata(0);
+
+        poiDataOverlay.setOnStateChangeListener(onPOIdataStateChangeListener);
+
+        /**/mOverlayManager.setOnCalloutOverlayListener((NMapOverlayManager.OnCalloutOverlayListener)this);
 
     }
 
@@ -152,6 +219,12 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
     @Override
     public void onSingleTapUp(NMapView nMapView, MotionEvent motionEvent) {
 
+    }
+
+    @Override
+    public NMapCalloutOverlay onCreateCalloutOverlay(NMapOverlay arg0, NMapOverlayItem arg1, Rect arg2)
+    {
+        return new NMapCalloutBasicOverlay(arg0, arg1, arg2);
     }
 
 //    public NGeoPoint setCurrent_point(int gu_num)
