@@ -18,7 +18,7 @@ public class ReviewActivity extends Activity
 
     public void onButton1Clicked(View v)
     {
-        Toast.makeText(getApplicationContext(), "¸®ºä ³¡³µÀ¸¸é µ¹¾Æ°¡¶ó¶ó", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "ë¦¬ë·° ëë‚¬ìœ¼ë©´ ëŒì•„ê°€ë¼ë¼", Toast.LENGTH_LONG).show();
 
         finish();
    }

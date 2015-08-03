@@ -1,2 +1,3 @@
 configurations.create("default")
 artifacts.add("default", file('nmaps.jar'))
+//compileOptions.edncoding = 'UTF-8'

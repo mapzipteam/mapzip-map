@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/androidTest/java/com/example/songjiwon/navermap2/ApplicationTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/songjiwon/navermap2/Location.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/songjiwon/navermap2/MapActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/songjiwon/navermap2/ReviewActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nmaps/build.gradle" charset="x-windows-949" />
   </component>
 </project>

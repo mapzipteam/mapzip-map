@@ -31,7 +31,7 @@ import static com.example.songjiwon.navermap2.Location.GANGNAMGU;
 import static com.example.songjiwon.navermap2.Location.SEOUL;
 
 
-public class MapActivity extends NMapActivity implements NMapView.OnMapStateChangeListener, NMapView.OnMapViewTouchEventListener, /*ÀÌÁ¦ºÎÅÏ ¿À¹ö·¹ÀÌ ¾ÆÀÌÄÜ*/NMapOverlayManager.OnCalloutOverlayListener
+public class MapActivity extends NMapActivity implements NMapView.OnMapStateChangeListener, NMapView.OnMapViewTouchEventListener, /*ì´ì œë¶€í„´ ì˜¤ë²„ë ˆì´ ì•„ì´ì½˜*/NMapOverlayManager.OnCalloutOverlayListener
 {
     public static final String API_KEY = "d38869cf3ca862bf9e45d02b6ec3faeb";
     NMapView mMapView = null;
@@ -41,7 +41,7 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
     NGeoPoint current_point = SEOUL;
 
    /////////////////////// private int GU_NUM = 0;
-    //¿©±â¼­ºÎÅÏ ¿À¹ö·¹ÀÌ ¾ÆÀÌÅÛ
+    //ì—¬ê¸°ì„œë¶€í„´ ì˜¤ë²„ë ˆì´ ì•„ì´í…œ
 
     NMapViewerResourceProvider mMapViewerResourceProvider = null;
     NMapOverlayManager mOverlayManager;
@@ -73,17 +73,17 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
     protected void onCreate(Bundle savedInstanceState) {
 
         ////////////////////GU_NUM = getIntent().getExtras().getInt("location");
-        //¤¤¤¤ÀÌ°Ç ¾ÈµÉ°Í°°´Ù........À¸¾îcurrent_point =(NGeoPoint)(getIntent().getExtras().getInt("location"));
-        ///ÁØ¼öÇü ÄÚµå int b = getIntent().getExtras().getInt("location");
+        //ã„´ã„´ì´ê±´ ì•ˆë ê²ƒê°™ë‹¤........ìœ¼ì–´current_point =(NGeoPoint)(getIntent().getExtras().getInt("location"));
+        ///ì¤€ìˆ˜í˜• ì½”ë“œ int b = getIntent().getExtras().getInt("location");
 
-        //ÀÌ°Å ÇØº¸ÀÚ!!!
+        //ì´ê±° í•´ë³´ì!!!
         current_point = new NGeoPoint(getIntent().getExtras().getDouble("LNG"), getIntent().getExtras().getDouble("LAT"));
 
-        //gÈ®ÀÎ¿ë Åä½ºÆ®
-        Toast.makeText(getApplicationContext(),"ÁöµµÈ­¸é¿¡¼­ ¹ŞÀº LNG : "+getIntent().getExtras().getDouble("LNG"),Toast.LENGTH_LONG).show();
+        //gí™•ì¸ìš© í† ìŠ¤íŠ¸
+        Toast.makeText(getApplicationContext(),"ì§€ë„í™”ë©´ì—ì„œ ë°›ì€ LNG : "+getIntent().getExtras().getDouble("LNG"),Toast.LENGTH_LONG).show();
 
 
-        Toast.makeText(getApplicationContext(),"ÁöµµÈ­¸é¿¡¼­ ¹ŞÀº LAT : "+getIntent().getExtras().getDouble("LAT"),Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"ì§€ë„í™”ë©´ì—ì„œ ë°›ì€ LAT : "+getIntent().getExtras().getDouble("LAT"),Toast.LENGTH_LONG).show();
 
         //////////////////////////////current_point.setCurrent_point(GU_NUM);
 
@@ -106,7 +106,7 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
         mMapView.setBuiltInZoomControls(true, null);
 
         mMapController = mMapView.getMapController();
-        //¿©±â±îÁö°¡ ¿À¹ö·¹ÀÌ ¾ÆÀÌÄÜ ³Ö±âÀü
+        //ì—¬ê¸°ê¹Œì§€ê°€ ì˜¤ë²„ë ˆì´ ì•„ì´ì½˜ ë„£ê¸°ì „
 
 
         mMapViewerResourceProvider = new NMapViewerResourceProvider(this);
@@ -119,15 +119,15 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
 
         poiData.beginPOIdata(5);
 
-        poiData.addPOIitem(127.0716985, 37.5430318, "¿ì¸¶ÀÌµµ", markerId, 0);
-        poiData.addPOIitem(126.9206943, 37.5482579, "ºÎ¾ûÀÌ µ·±î½º", markerId, 0);
-        poiData.addPOIitem(126.9191225, 37.550611, "Ä£±¸³× Áıºó³¯", markerId, 0);
-        poiData.addPOIitem(126.9436279, 37.5402453, "¹Ú´ŞÀç", markerId, 0);
-        poiData.addPOIitem(127.068504, 37.5384298, "¸ÅÈ­¹İÁ¡", markerId, 0);
-        poiData.addPOIitem(127.027144, 37.5023993, "¸®°ñ·¹Åä »çÄ«°í ÇÇÀÚ", markerId, 0);
-        poiData.addPOIitem(127.027197, 37.5021116, "Ä«´Ï¹ß ÇÇÀÚ", markerId, 0);
-        poiData.addPOIitem(126.953024, 37.495872, "ÆÄµ¿Ãß¾ß", markerId, 0);
-        poiData.addPOIitem(126.9572027, 37.4946909, "½¡°¡¸¶ ½¡ºÒ±¸ÀÌ", markerId, 0);
+        poiData.addPOIitem(127.0716985, 37.5430318, "ìš°ë§ˆì´ë„", markerId, 0);
+        poiData.addPOIitem(126.9206943, 37.5482579, "ë¶€ì—‰ì´ ëˆê¹ŒìŠ¤", markerId, 0);
+        poiData.addPOIitem(126.9191225, 37.550611, "ì¹œêµ¬ë„¤ ì§‘ë¹ˆë‚ ", markerId, 0);
+        poiData.addPOIitem(126.9436279, 37.5402453, "ë°•ë‹¬ì¬", markerId, 0);
+        poiData.addPOIitem(127.068504, 37.5384298, "ë§¤í™”ë°˜ì ", markerId, 0);
+        poiData.addPOIitem(127.027144, 37.5023993, "ë¦¬ê³¨ë ˆí†  ì‚¬ì¹´ê³  í”¼ì", markerId, 0);
+        poiData.addPOIitem(127.027197, 37.5021116, "ì¹´ë‹ˆë°œ í”¼ì", markerId, 0);
+        poiData.addPOIitem(126.953024, 37.495872, "íŒŒë™ì¶”ì•¼", markerId, 0);
+        poiData.addPOIitem(126.9572027, 37.4946909, "ìˆ¯ê°€ë§ˆ ìˆ¯ë¶ˆêµ¬ì´", markerId, 0);
 
         poiData.endPOIdata();
 
@@ -139,7 +139,9 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
 
         /**/mOverlayManager.setOnCalloutOverlayListener((NMapOverlayManager.OnCalloutOverlayListener)this);
 
-    }
+
+          }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

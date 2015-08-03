@@ -47,8 +47,8 @@ public class MainActivity extends ActionBarActivity {
     {
         Intent intent = new Intent(getApplicationContext(),MapActivity.class);
 
-//준수형이 해주신거 이런식으로 바꿔야해intent.putExtra("location", 1);
-/////ㄴㄴ이게 젤좋은데 안되는것같다intent.putExtra("location", (Parcelable)Location.setLocation(1));
+        //준수형이 해주신거 이런식으로 바꿔야해intent.putExtra("location", 1);
+        /////ㄴㄴ이게 젤좋은데 안되는것같다intent.putExtra("location", (Parcelable)Location.setLocation(1));
 
         intent.putExtra("LNG", Location.GANGNAMGU_LNG);
         intent.putExtra("LAT", Location.GANGNAMGU_LAT);
@@ -60,7 +60,7 @@ public class MainActivity extends ActionBarActivity {
     {
         Intent intent = new Intent(getApplicationContext(), MapActivity.class);
 
-       //잠시만한거 안더ㅣ면 이거해!! intent.putExtra("location", 2 );
+      //이전코드intent.putExtra("location", 2 );
         intent.putExtra("LNG", Location.GANGDONGGU_LNG);
         intent.putExtra("LAT", Location.GANGDONGGU_LAT);
 
@@ -71,7 +71,7 @@ public class MainActivity extends ActionBarActivity {
     {
         Intent intent = new Intent(getApplicationContext(),MapActivity.class);
 
-        //intent.putExtra("location", 5);
+        //이전코드intent.putExtra("location", 5);
         intent.putExtra("LNG", Location.GWANAKGU_LNG);
         intent.putExtra("LAT", Location.GWANAKGU_LAT);
 
@@ -82,7 +82,7 @@ public class MainActivity extends ActionBarActivity {
     {
         Intent intent = new Intent(getApplicationContext(),MapActivity.class);
 
-        //intent.putExtra("location", 6);
+        //이전코드intent.putExtra("location", 6);
         intent.putExtra("LNG", Location.GWANGJINGU_LNG);
         intent.putExtra("LAT", Location.GWANGJINGU_LAT);
 
