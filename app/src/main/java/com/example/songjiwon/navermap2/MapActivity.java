@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.nhn.android.maps.NMapActivity;
@@ -29,13 +30,17 @@ import com.nhn.android.mapviewer.overlay.NMapPOIdataOverlay;
 
 import static com.example.songjiwon.navermap2.Location.GANGNAMGU;
 import static com.example.songjiwon.navermap2.Location.SEOUL;
+import static com.example.songjiwon.navermap2.R.id.map;
 
 
 public class MapActivity extends NMapActivity implements NMapView.OnMapStateChangeListener, NMapView.OnMapViewTouchEventListener, /*이제부턴 오버레이 아이콘*/NMapOverlayManager.OnCalloutOverlayListener
 {
     public static final String API_KEY = "d38869cf3ca862bf9e45d02b6ec3faeb";
-    NMapView mMapView = null;
+
+    private NMapView mMapView = null;
+
     NMapController mMapController = null;
+
     LinearLayout MapContainer;
 
     NGeoPoint current_point = SEOUL;
@@ -44,8 +49,10 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
     //여기서부턴 오버레이 아이템
 
     NMapViewerResourceProvider mMapViewerResourceProvider = null;
+
     NMapOverlayManager mOverlayManager;
-    NMapPOIdataOverlay.OnStateChangeListener onPOIdataStateChangeListener = new NMapPOIdataOverlay.OnStateChangeListener()
+
+   NMapPOIdataOverlay.OnStateChangeListener onPOIdataStateChangeListener = new NMapPOIdataOverlay.OnStateChangeListener()
     {
         public void onCalloutClick(NMapPOIdataOverlay poiDataOverlay, NMapPOIitem item)
         {
@@ -66,6 +73,9 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
         }
 
     };
+
+    NMapPOIdataOverlay poiDataOverlay;
+
 
 
 
@@ -89,7 +99,8 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
 
         super.onCreate(savedInstanceState);
 
-        MapContainer = (LinearLayout) findViewById(R.id.map);
+        MapContainer = (LinearLayout) findViewById(map);
+
 
         mMapView = new NMapView(this);
 
@@ -131,7 +142,7 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
 
         poiData.endPOIdata();
 
-        NMapPOIdataOverlay poiDataOverlay = /**/mOverlayManager.createPOIdataOverlay(poiData, null);
+       poiDataOverlay = /**/mOverlayManager.createPOIdataOverlay(poiData, null);
 
         poiDataOverlay.showAllPOIdata(0);
 
@@ -140,8 +151,24 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
         /**/mOverlayManager.setOnCalloutOverlayListener((NMapOverlayManager.OnCalloutOverlayListener)this);
 
 
+        mOverlayManager.setOnCalloutOverlayViewListener(onCalloutOverlayViewListener);
           }
 
+
+    private final NMapOverlayManager.OnCalloutOverlayViewListener onCalloutOverlayViewListener = new NMapOverlayManager.OnCalloutOverlayViewListener(){
+        public View onCreateCalloutOverlayView(NMapOverlay itemOverlay, NMapOverlayItem overlayItem, Rect itemBounds ) {
+
+            if(overlayItem != null) {
+                String title = overlayItem.getTitle();
+
+                if(title != null && title.length() > 0) {
+                    return new NMapCalloutCustomOverlayView(MapActivity.this, itemOverlay, overlayItem, itemBounds);
+                }
+            }
+
+            return null;
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

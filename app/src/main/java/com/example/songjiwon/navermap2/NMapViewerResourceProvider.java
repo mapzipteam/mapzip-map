@@ -1,10 +1,3 @@
-/* 
- * NMapViewerResourceProvider.java $version 2010. 1. 1
- * 
- * Copyright 2010 NHN Corp. All rights Reserved. 
- * NHN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms. 
- */
-
 package com.example.songjiwon.navermap2;
 
 import android.content.Context;
@@ -26,11 +19,7 @@ import com.nhn.android.mapviewer.overlay.NMapResourceProvider;
 
 //import com.nhn.android.mapviewer.R;
 
-/**
- * Wrapper class to provider resources on map view.
- * 
- * @author kyjkim
- */
+
 public class NMapViewerResourceProvider extends NMapResourceProvider implements
 	NMapCalloutCustomOldOverlay.ResourceProvider {
 	private static final String LOG_TAG = "NMapViewerResourceProvider";

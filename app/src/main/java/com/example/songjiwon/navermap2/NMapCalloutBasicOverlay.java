@@ -1,10 +1,3 @@
-/* 
- * NMapCalloutBasicOverlay.java $version 2010. 1. 1
- * 
- * Copyright 2010 NHN Corp. All rights Reserved. 
- * NHN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms. 
- */
-
 package com.example.songjiwon.navermap2;
 
 import android.graphics.Canvas;
@@ -20,11 +13,6 @@ import com.nhn.android.maps.NMapOverlayItem;
 import com.nhn.android.maps.NMapView;
 import com.nhn.android.mapviewer.overlay.NMapCalloutOverlay;
 
-/**
- * Basic callout overlay
- * 
- * @author kyjkim 
- */
 public class NMapCalloutBasicOverlay extends NMapCalloutOverlay {
 
 	private static final int CALLOUT_TEXT_PADDING_X = 10;
@@ -124,7 +112,7 @@ public class NMapCalloutBasicOverlay extends NMapCalloutOverlay {
 		canvas.drawText(mOverlayItem.getTitle(), mOffsetX, mOffsetY, mTextPaint);
 	}
 
-	/* Internal Functions */
+	// Internal Functions
 
 	private void adjustTextBounds(NMapView mapView) {
 

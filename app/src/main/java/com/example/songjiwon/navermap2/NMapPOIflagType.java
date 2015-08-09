@@ -1,17 +1,5 @@
-/* 
- * NMapPOIflagType.java $version 2010. 1. 1
- * 
- * Copyright 2010 NHN Corp. All rights Reserved. 
- * NHN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms. 
- */
-
 package com.example.songjiwon.navermap2;
 
-/**
- * Wrapper class representing POI flag types on map view.
- * 
- * @author kyjkim
- */
 public class NMapPOIflagType {
 	public static final int UNKNOWN = 0x0000;
 
@@ -92,3 +80,5 @@ public class NMapPOIflagType {
 		return iconIndex;
 	}
 }
+
+

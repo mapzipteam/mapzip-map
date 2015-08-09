@@ -1,9 +1,3 @@
-/* 
- * NMapCalloutCustomOverlay.java $version 2010. 1. 1
- * 
- * Copyright 2010 NHN Corp. All rights Reserved. 
- * NHN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms. 
- */
 
 package com.example.songjiwon.navermap2;
 
@@ -22,11 +16,6 @@ import com.nhn.android.maps.NMapView;
 import com.nhn.android.mapviewer.overlay.NMapCalloutOverlay;
 import com.nhn.android.mapviewer.overlay.NMapResourceProvider;
 
-/**
- * Customized callout overlay.
- * 
- * @author kyjkim 
- */
 public class NMapCalloutCustomOldOverlay extends NMapCalloutOverlay {
 	private static final String LOG_TAG = "NMapCalloutCustomOverlay";
 	private static final boolean DEBUG = false;
@@ -76,9 +65,7 @@ public class NMapCalloutCustomOldOverlay extends NMapCalloutOverlay {
 	private final String mTailText;
 	private float mTailTextWidth;
 
-	/** 
-	 * Resource provider should implement this interface
-	 */
+
 	public static interface ResourceProvider {
 
 		public Drawable getCalloutBackground(NMapOverlayItem item);
@@ -260,8 +247,7 @@ public class NMapCalloutCustomOldOverlay extends NMapCalloutOverlay {
 		}
 	}
 
-	/* Internal Functions */
-
+	//Internal Functions
 	private void drawBackground(Canvas canvas) {
 
 		mTemp2Rect.left = (int)(mTempRectF.left + 0.5F);
@@ -362,3 +348,5 @@ public class NMapCalloutCustomOldOverlay extends NMapCalloutOverlay {
 		return null;
 	}
 }
+
+
