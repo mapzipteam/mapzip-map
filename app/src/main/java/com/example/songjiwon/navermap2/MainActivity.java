@@ -10,6 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -87,5 +90,31 @@ public class MainActivity extends ActionBarActivity {
         intent.putExtra("LAT", Location.GWANGJINGU_LAT);
 
         startActivity(intent);
+    }
+
+    public void onButton5Clicked(View v)//리뷰 쓰러 가기버튼
+    {
+
+//        String searchinRestaurant = "우마이도";
+//
+//        Search search = new Search();
+//
+//        Restaurant output = null ;
+//        output =  search.getRestaurantData(searchinRestaurant);
+//
+//        Toast.makeText(getApplicationContext()," : 가게 명"+output.getTitle(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext()," : 가게 링크"+output.getLink(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext()," : 가게 분류"+output.getCategory(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext()," : 가게 설명"+output.getDescription(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext()," : 가게 전화번호"+output.getTelephone(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext()," : 가게 주소"+output.getAdress(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext()," : 가게 주소2"+output.getRoadadress(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext()," : 가게 X"+output.getMapx(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext()," : 가게 Y명"+output.getMapy(),Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+
+        startActivity(intent);
+
     }
 }

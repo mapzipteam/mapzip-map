@@ -60,5 +60,17 @@
         android:onClick="onButton4Clicked"
         android:layout_below="@+id/button3"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="make_New_Riview"
+        android:id="@+id/button5"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="36dp"
+        android:textColor="#3362E0"
+        android:onClick="onButton5Clicked" />
 </RelativeLayout>
 
