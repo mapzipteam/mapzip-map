@@ -132,18 +132,23 @@ public class MapActivity extends NMapActivity implements NMapView.OnMapStateChan
 
         poiData.addPOIitem(127.0716985, 37.5430318, "우마이도", markerId, 0);
         poiData.addPOIitem(126.9206943, 37.5482579, "부엉이 돈까스", markerId, 0);
-        poiData.addPOIitem(126.9191225, 37.550611, "친구네 집빈날", markerId, 0);
-        poiData.addPOIitem(126.9436279, 37.5402453, "박달재", markerId, 0);
-        poiData.addPOIitem(127.068504, 37.5384298, "매화반점", markerId, 0);
-        poiData.addPOIitem(127.027144, 37.5023993, "리골레토 사카고 피자", markerId, 0);
-        poiData.addPOIitem(127.027197, 37.5021116, "카니발 피자", markerId, 0);
-        poiData.addPOIitem(126.953024, 37.495872, "파동추야", markerId, 0);
-        poiData.addPOIitem(126.9572027, 37.4946909, "숯가마 숯불구이", markerId, 0);
+//        poiData.addPOIitem(126.9191225, 37.550611, "친구네 집빈날", markerId, 0);
+//        poiData.addPOIitem(126.9436279, 37.5402453, "박달재", markerId, 0);
+//        poiData.addPOIitem(127.068504, 37.5384298, "매화반점", markerId, 0);
+//        poiData.addPOIitem(127.027144, 37.5023993, "리골레토 사카고 피자", markerId, 0);
+//        poiData.addPOIitem(127.027197, 37.5021116, "카니발 피자", markerId, 0);
+//        poiData.addPOIitem(126.953024, 37.495872, "파동추야", markerId, 0);
+//        poiData.addPOIitem(126.9572027, 37.4946909, "숯가마 숯불구이", markerId, 0);
+        poiData.addPOIitem(127.07173206210116, 37.543086987020196, "우마이도2222", markerId, 0);
+        poiData.addPOIitem(126.92072313828956, 37.548319592761246, "부엉이 돈까스3333", markerId, 0);
+
+
 
         poiData.endPOIdata();
 
        poiDataOverlay = /**/mOverlayManager.createPOIdataOverlay(poiData, null);
 
+      //  poiDataOverlay.selectPOIitemBy("TAG",true);
         poiDataOverlay.showAllPOIdata(0);
 
         poiDataOverlay.setOnStateChangeListener(onPOIdataStateChangeListener);

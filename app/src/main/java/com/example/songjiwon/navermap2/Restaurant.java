@@ -9,10 +9,11 @@ public class Restaurant
     private String telephone;
     private String adress;
     private String roadadress;
-    private double mapx;
-    private double mapy;
-
-    private String[] info;
+    private int katecX;     //네이버 검색 API result 값
+    private int katecY;     //네이버 검색 API result 값
+    
+    private double lngX;    //네이버 검색 result 값을 daum API로 바꾼 값
+    private double latY;    //네이버 검색 result 값을 daum API로 바꾼 값
 
     public Restaurant()
     {
@@ -23,39 +24,16 @@ public class Restaurant
         telephone = null;
         adress = null;
         roadadress = null;
-        //mapx = ;
-        //mapy = ;
-
-        info = new String[10];
-
-        info[0] = title;
-        info[1] = link;
-        info[2] = category;
-        info[3] = description;
-        info[4] = telephone;
-        info[5] = adress;
-        info[6] = roadadress;
-        info[7] = ""+mapx;
-        info[8] = ""+mapy;
-        info[9] = "";
-
     }
 
 
-    public String[] getInfo() {
-        return info;
-    }
 
-//    public void setInfo(String[] info) {
-//        this.info = info;
-//    }
 
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
-        info[9]+="0";
         this.title = title;
     }
 
@@ -66,7 +44,6 @@ public class Restaurant
     }
 
     public void setLink(String link) {
-        info[9]+="1";
         this.link = link;
     }
 
@@ -78,7 +55,6 @@ public class Restaurant
     }
 
     public void setCategory(String category) {
-        info[9]+="2";
         this.category = category;
     }
 
@@ -89,7 +65,6 @@ public class Restaurant
     }
 
     public void setDescription(String description) {
-        info[9]+="3";
         this.description = description;
     }
 
@@ -101,7 +76,6 @@ public class Restaurant
     }
 
     public void setTelephone(String telephone) {
-        info[9]+="4";
         this.telephone = telephone;
     }
 
@@ -113,7 +87,6 @@ public class Restaurant
     }
 
     public void setAdress(String adress) {
-        info[9]+="5";
         this.adress = adress;
     }
 
@@ -125,32 +98,50 @@ public class Restaurant
     }
 
     public void setRoadadress(String roadadress) {
-        info[9]+="6";
         this.roadadress = roadadress;
     }
 
 
 
 
-    public double getMapx() {
-        return mapx;
+    public int getKatecX() {
+        return katecX;
     }
 
-    public void setMapx(double mapx) {
-        info[9]+="7";
-        this.mapx = mapx;
+    public void setKatecX(int katecX) {
+        this.katecX = katecX;
     }
 
 
 
 
-    public double getMapy() {
-        return mapy;
+    public int getKatecY() {
+        return katecY;
     }
 
-    public void setMapy(double mapy) {
-        info[9]+="8";
-        this.mapy = mapy;
+    public void setKatecY(int katecY) {
+        this.katecY = katecY;
+    }
+
+
+
+    public double getLngX() {
+        return lngX;
+    }
+
+    public void setLngX(double lngX) {
+        this.lngX = lngX;
+    }
+
+
+
+
+    public double getLatY() {
+        return latY;
+    }
+
+    public void setLatY(double latY) {
+        this.latY = latY;
     }
 
 

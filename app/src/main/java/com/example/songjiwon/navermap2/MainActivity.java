@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -95,6 +96,8 @@ public class MainActivity extends ActionBarActivity {
     public void onButton5Clicked(View v)//리뷰 쓰러 가기버튼
     {
 
+
+
 //        String searchinRestaurant = "우마이도";
 //
 //        Search search = new Search();
@@ -114,7 +117,9 @@ public class MainActivity extends ActionBarActivity {
 
         Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
 
+
         startActivity(intent);
+
 
     }
 }
