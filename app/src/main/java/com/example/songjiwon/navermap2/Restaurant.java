@@ -1,5 +1,7 @@
 package com.example.songjiwon.navermap2;
 
+import android.util.Log;
+
 public class Restaurant
 {
     private String title;
@@ -34,7 +36,7 @@ public class Restaurant
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Log.d("vlooey", "setTitle()!!!!");this.title = title;
     }
 
 

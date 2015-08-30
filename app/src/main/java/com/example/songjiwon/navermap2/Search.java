@@ -27,7 +27,7 @@
 //import com.android.volley.VolleyError;
 //import com.android.volley.toolbox.StringRequest;
 //
-//public class RestaurantSearcher {
+//public class RestaurantParsing {
 //
 //    private Restaurant restaurant = new Restaurant();
 //    private ArrayList<Restaurant> restaurants = new ArrayList<Restaurant>();
