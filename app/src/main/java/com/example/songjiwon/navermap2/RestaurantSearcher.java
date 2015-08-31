@@ -70,6 +70,7 @@ public class RestaurantSearcher {
             e.printStackTrace();
         }
 
+        Log.d("volley", url);
         RequestQueue queue = MyVolley.getInstance(context).getRequestQueue();
 
         StringRequest sr = new StringRequest(Request.Method.GET, url, successListener(), errorListener());
@@ -100,6 +101,7 @@ public class RestaurantSearcher {
                     }
 
                     restaurants = katecConvertThread.getRestaurants();
+
                 } catch (Exception e) {
                     System.out.print(e.getMessage());
                 }
@@ -136,4 +138,6 @@ public class RestaurantSearcher {
     public RestaurantResult getRestaurants() {
         return restaurants;
     }
+
+
 }

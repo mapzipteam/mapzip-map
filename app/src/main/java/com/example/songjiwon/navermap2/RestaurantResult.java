@@ -31,6 +31,10 @@ public class RestaurantResult {
         return restaurants.get(i);
     }
 
+    public ArrayList<Restaurant> getRestaurants(){
+        return restaurants;
+    }
+
     public void clear(){
         restaurants.clear();
     }
