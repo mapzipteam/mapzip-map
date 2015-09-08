@@ -173,10 +173,13 @@ import com.nhn.android.mapviewer.overlay.NMapCalloutOverlay;
 import com.nhn.android.mapviewer.overlay.NMapOverlayManager;
 import com.nhn.android.mapviewer.overlay.NMapPOIdataOverlay;
 
-import org.xmlpull.v1.XmlPullParser;
+
+import com.nhn.android.maps.NMapView.OnMapStateChangeListener;
+import com.nhn.android.mapviewer.overlay.NMapOverlayManager.OnCalloutOverlayListener;
 
 
-public class SearchInLocationActivity extends NMapActivity implements NMapView.OnMapStateChangeListener, NMapView.OnMapViewTouchEventListener {
+
+public class SearchInLocationActivity extends NMapActivity implements OnMapStateChangeListener{
 
  
     //default Member variable declare
@@ -197,34 +200,34 @@ public class SearchInLocationActivity extends NMapActivity implements NMapView.O
 
 
 
-    //overlay
-//    NMapViewerResourceProvider nMapViewerResourceProvider;
-//    NMapOverlayManager nMapOverlayManager;
-//    int markerId;
-//    NMapPOIdata nMapPOIdata;
-//    NMapPOIdataOverlay nMapPOIdataOverlay;
 
 
     public void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
 
+        setContentView(R.layout.activity_search_in_location);
+
+        /*setContentView(R.layout.activity_search_in_location2)*/;
+//        setContentView(mMapView);
+
         //////mapContainer = (LinearLayout)findViewById(R.id.search_in_location_map);
       ////이건 뭐하는앨까?//  mapContainer = (LinearLayout)findViewById(R.id.search_in_location_map2);
-        MapContainer = (LinearLayout)findViewById(R.id.search_in_location_map_2);
-
+        MapContainer = (LinearLayout)findViewById(R.id.search_in_location_map);
 
 
         mMapView = new NMapView(this);
 
 
-        mMapView.setApiKey(MapActivity.API_KEY);
+        mMapController = mMapView.getMapController();
 
 
-        mMapView.setScalingFactor(2.0f, true);
+        mMapView.setApiKey(API_KEY);
 
 
-        setContentView(R.layout.activity_search_in_location2);
+        MapContainer.addView(mMapView);
+
+
         ////////////////////////////////////////////////////////////////////////setContentView(mMapView);
 
      /*   Window window = getWindow();
@@ -243,52 +246,16 @@ public class SearchInLocationActivity extends NMapActivity implements NMapView.O
         mMapView.setClickable(true);
 
 
-        mMapView.setOnMapStateChangeListener(this);
-        mMapView.setOnMapViewTouchEventListener(this);
-
-
         mMapView.setBuiltInZoomControls(true, null);
 
 
-
-        mMapController = mMapView.getMapController();
-
-
-        //오버레이 아이콘!!!!!!1
-
-
-        /*NMapProjection nMapProjection = mMapView.getMapProjection();
-
-        NGeoPoint LT = nMapProjection.fromPixels(0,0);
-        Toast.makeText(getApplicationContext(), "LT"+LT.getLongitude()+"  "+LT.getLatitude(),Toast.LENGTH_LONG);*/
-
-
-        //NMapOverlayItem nMapOverlayItem = new NMapOverlayItem()
+        mMapView.setOnMapStateChangeListener(this);
+        //mMapView.setOnMapViewTouchEventListener(this);
 
 
 
 
-//        nMapViewerResourceProvider = new NMapViewerResourceProvider(this);
-//        nMapOverlayManager = new NMapOverlayManager(this, mMapView, nMapViewerResourceProvider);
-//
-//        //markerId = NMapPOIflagType.CLICKABLE_ARROW;
-//        markerId = NMapPOIflagType.PIN;
-//
-//        nMapPOIdata = new NMapPOIdata(1, nMapViewerResourceProvider);
-//        nMapPOIdata.beginPOIdata(1);
-//        //Log.d("SIL", "OnCreate에서의 currentLng : "+currentLNG+", currentLAT : "+currentLAT);
-//        nMapPOIdata.addPOIitem(new NGeoPoint(126.97837569120298, 37.565942095656254/*currentLNG, currentLAT*/), "위치 가져오기", markerId, "SIL",0);
-//        nMapPOIdata.endPOIdata();
-//
-//        nMapPOIdataOverlay = nMapOverlayManager.createPOIdataOverlay(nMapPOIdata, null);
-//        /////필요없을듯////nMapPOIdataOverlay.showAllPOIdata(0);
-//        ///nMapPOIdataOverlay.showAllPOIdata(0);
-//
-//        /*1*/nMapPOIdataOverlay.setOnStateChangeListener(new SearchInLocationOnPOIdataStateChangeListener());
-//
-//        /*2*/nMapOverlayManager.setOnCalloutOverlayListener(new SearchInLocationOnCalloutOverlayListener());
-//
-//        /*3*/nMapOverlayManager.setOnCalloutOverlayViewListener(new SearchInLocationOnCalloutOverlayViewListener());
+
 
 
        /* MapContainer.addView(mMapView);*/
@@ -307,19 +274,6 @@ public class SearchInLocationActivity extends NMapActivity implements NMapView.O
        // MapContainer.addView(mMapView);
 
     }
-
-//    public void addPOIItem(double lng, double lat){
-//
-//        nMapPOIdata.removePOIitem("SIL");
-//
-//        nMapPOIdata.beginPOIdata(0);
-//        nMapPOIdata.addPOIitem(new NGeoPoint(lng, lat), "위치 가져오기", markerId, "SIL", 0);
-//        nMapPOIdata.endPOIdata();
-//
-//        nMapController.reload();
-//
-//
-//    }
 
 
     ////*ok*/class SearchInLocationOnMapStateChangeListener implements NMapView.OnMapStateChangeListener{
@@ -345,7 +299,7 @@ public class SearchInLocationActivity extends NMapActivity implements NMapView.O
             NMapProjection nMapProjection = mMapView.getMapProjection();
 
             //NGeoPoint LT = nMapProjection.fromPixels(0,0);
-            //Log.d("SIL", "0,0 "+LT.getLongitude()+"  "+LT.getLatitude());
+            Log.d("SIL", "중심좌표의 위도 경도 : "+currentLNG+" ; "+currentLAT);
 
             DisplayMetrics displayMetrics = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -358,50 +312,6 @@ public class SearchInLocationActivity extends NMapActivity implements NMapView.O
 
             currentLNG = currentPoint.getLongitude();
             currentLAT = currentPoint.getLatitude();
-
-//            Log.d("SIL", "currentLNG = " + currentLNG + ", currentLAT = " + currentLAT);
-//
-//            Log.d("SIL", "addPOIItem(currentLNG, currentLAT); is called");
-//            addPOIItem(currentLNG, currentLAT);
-//            Log.d("SIL", "addPOIItem(currentLNG, currentLAT); is returned");
-
-            //nMapPOIdata.addPOIitem(new NGeoPoint(currentLNG, currentLAT), "위치 가져오기", markerId, 0);
-
-           // nMapPOIdataOverlay.showAllPOIdata(11);
-
-
-
-//            NGeoPoint AAA = new NGeoPoint(currentLNG, currentLAT);
-//
-//            int markedID = NMapPOIflagType.
-//
-//            String BBB = new String("지도 중심!!!");
-//
-//            String CCC = new String("이게 뭘까??");
-//
-//            Drawable DDD =
-//
-//            NMapOverlayItem centerOverlayItem = new NMapOverlayItem(AAA,BBB, CCC , DDD);
-//
-//            centerOverlayItem.setVisibility(NMapOverlayItem.VISIBLE);
-
-           /* NMapViewerResourceProvider nMapViewerResourceProvider = new NMapViewerResourceProvider(SearchInLocationActivity.this);
-            NMapOverlayManager nMapOverlayManager = new NMapOverlayManager(SearchInLocationActivity.this, nMapView, nMapViewerResourceProvider);
-            int markerId = NMapPOIflagType.SINGLE_MARKER_END;
-            NMapPOIdata nMapPOIdata = new NMapPOIdata(1, nMapViewerResourceProvider);
-            nMapPOIdata.beginPOIdata(1);
-            nMapPOIdata.addPOIitem(new NGeoPoint(currentLNG, currentLAT), "위치 가져오기", markerId, 0);
-            nMapPOIdata.endPOIdata();
-            NMapPOIdataOverlay nMapPOIdataOverlay = nMapOverlayManager.createPOIdataOverlay(nMapPOIdata, null);
-            nMapPOIdataOverlay.showAllPOIdata(0);
-
-            nMapPOIdataOverlay.setOnStateChangeListener(new SearchInLocationOnPOIdataStateChangeListener());
-
-            nMapOverlayManager.setOnCalloutOverlayListener((NMapOverlayManager.OnCalloutOverlayListener) SearchInLocationActivity.this);
-
-            nMapOverlayManager.setOnCalloutOverlayViewListener( new SearchInLocationOnCalloutOverlayViewListener());
-*/
-
 
         }
 
@@ -512,11 +422,6 @@ public class SearchInLocationActivity extends NMapActivity implements NMapView.O
             return null;
         }
     ///}
-
-
-
-
-
 
 }
 
