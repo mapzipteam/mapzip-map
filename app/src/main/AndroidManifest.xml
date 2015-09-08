@@ -31,8 +31,11 @@
 
         <activity
             android:name=".SearchActivity"
-            android:configChanges="orientation"
-            >
+            android:configChanges="orientation">
+        </activity>
+
+        <activity
+            android:name=".SearchInLocationActivity">
         </activity>
 
     </application>

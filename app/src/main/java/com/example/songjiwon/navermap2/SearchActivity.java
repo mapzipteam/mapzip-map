@@ -4,6 +4,7 @@ package com.example.songjiwon.navermap2;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -39,6 +40,7 @@ import java.util.ArrayList;
 public class SearchActivity extends ListActivity {
 
     Button searchButton;
+    Button searchInLocationButton;
     TextView textView;
     EditText editText;
 
@@ -63,10 +65,12 @@ public class SearchActivity extends ListActivity {
         setContentView(R.layout.activity_search);
 
         searchButton = (Button)findViewById(R.id.SearchButton);
+        searchInLocationButton = (Button)findViewById(R.id.SearchInLocationButton);
         textView = (TextView)findViewById(R.id.TextView1);
         editText = (EditText)findViewById(R.id.Edit1);
 
         searchButton.setOnClickListener(searchButtonClcikListener);
+        searchInLocationButton.setOnClickListener(searchInLocationButtonClcikListener);
 
         /*ListViewAdapter listViewAdapter = new ListViewAdapter(this, R.layout.row, restaurants.getRestaurants());
 
@@ -141,4 +145,15 @@ public class SearchActivity extends ListActivity {
         listViewAdapter.notifyDataSetChanged();
     }
 
+
+    Button.OnClickListener searchInLocationButtonClcikListener = new View.OnClickListener(){
+        public void onClick(View v){
+
+            Intent intent = new Intent(getApplicationContext(), SearchInLocationActivity.class);
+
+            startActivity(intent);
+
+
+        }
+    };
 }

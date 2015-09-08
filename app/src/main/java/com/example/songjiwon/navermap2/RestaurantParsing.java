@@ -123,9 +123,9 @@ public class RestaurantParsing {
 
                         if (tagId_TITLE == true) {
 
-                            restaurant.setTitle(parser.getText().trim());
+                            restaurant.setTitle(parser.getText().trim().replaceAll("<b>", "").replaceAll("</b>" ,""));
                             setTagIdFalse();
-                            //Log.d("volley", "0~>: " + parser.getText().trim());
+                            //Log.d("volley", "0~>: " + parser.getText().trim().replaceAll("<b>","").replaceAll("<\b" ,""));
 
                         } else if (tagId_LINK == true) {
 
@@ -149,7 +149,7 @@ public class RestaurantParsing {
 
                             restaurant.setTelephone(parser.getText().trim());
                             setTagIdFalse();
-                            //Log.d("volley", "4: " + parser.getText().trim());
+                            //Log.d("volley", "4: " + parser.getText());
 
                         } else if (tagId_ADRESS == true) {
 
@@ -161,7 +161,7 @@ public class RestaurantParsing {
 
                             restaurant.setRoadadress(parser.getText().trim());
                             setTagIdFalse();
-                            //Log.d("volley", "6: " + parser.getText().trim());
+                            //Log.d("volley", "6: " + parser.getText());
 
                         } else if (tagId_KATECX == true) {
 
@@ -169,7 +169,7 @@ public class RestaurantParsing {
 
                             restaurant.setKatecX(katecX);
                             setTagIdFalse();
-                            //Log.d("volley", "7: " + parser.getText().trim());
+                            //Log.d("volley", "7: " + parser.getText());
 
                         } else if (tagId_KATECY == true) {
 
@@ -177,7 +177,7 @@ public class RestaurantParsing {
 
                             restaurant.setKatecY(katecY);
                             setTagIdFalse();
-                            //Log.d("volley", "8: " + parser.getText().trim());
+                            //Log.d("volley", "8: " + parser.getText());
 
 
                             restaurant = addRestaurant(restaurant);

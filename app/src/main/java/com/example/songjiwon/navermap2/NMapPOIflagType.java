@@ -31,6 +31,10 @@ public class NMapPOIflagType {
 	// Clickable callout에 보여지는 화살표 
 	public static final int CLICKABLE_ARROW = CUSTOM_END + 1;
 
+
+	public static final int ARROW_1 = CUSTOM_END+2;
+
+
 	public static boolean isBoundsCentered(int markerId) {
 		boolean boundsCentered = false;
 
