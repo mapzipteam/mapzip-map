@@ -200,6 +200,11 @@ public class SearchInLocationActivity extends NMapActivity implements OnMapState
 
 
 
+    private Button goBackButton;
+    private Button makeReviewButton;
+
+
+
 
 
     public void onCreate(Bundle savedInstanceState){
@@ -208,70 +213,40 @@ public class SearchInLocationActivity extends NMapActivity implements OnMapState
 
         setContentView(R.layout.activity_search_in_location);
 
-        /*setContentView(R.layout.activity_search_in_location2)*/;
-//        setContentView(mMapView);
-
-        //////mapContainer = (LinearLayout)findViewById(R.id.search_in_location_map);
-      ////이건 뭐하는앨까?//  mapContainer = (LinearLayout)findViewById(R.id.search_in_location_map2);
         MapContainer = (LinearLayout)findViewById(R.id.search_in_location_map);
 
-
         mMapView = new NMapView(this);
-
-
+        Log.d("SIL", "*15@" + mMapView.getHeight());
         mMapController = mMapView.getMapController();
-
-
+        Log.d("SIL", "*16@" + mMapView.getHeight());
         mMapView.setApiKey(API_KEY);
-
+        Log.d("SIL", "*17@" + mMapView.getHeight());
 
         MapContainer.addView(mMapView);
+        Log.d("SIL", "*18@" + mMapView.getHeight());
 
-
-        ////////////////////////////////////////////////////////////////////////setContentView(mMapView);
-
-     /*   Window window = getWindow();
-        window.setContentView(R.layout.activity_search_in_location2);
-
-        LayoutInflater layoutInflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        LinearLayout linearLayout = (LinearLayout)layoutInflater.inflate(R.layout.over_search_in_location, null);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.FILL_PARENT,
-                LinearLayout.LayoutParams.FILL_PARENT);
-
-        window.addContentView(linearLayout, layoutParams);*/
 
 
 
         mMapView.setClickable(true);
-
+        Log.d("SIL", "*19@" + mMapView.getHeight());
 
         mMapView.setBuiltInZoomControls(true, null);
-
+        Log.d("SIL", "*110@" + mMapView.getHeight());
 
         mMapView.setOnMapStateChangeListener(this);
         //mMapView.setOnMapViewTouchEventListener(this);
+        Log.d("SIL", "*111@" + mMapView.getHeight());
 
 
+        //Button part
+        goBackButton = (Button)findViewById(R.id.search_in_location_go_back_button);
+        makeReviewButton = (Button)findViewById(R.id.search_in_location_make_review_button);
 
+        goBackButton.setOnClickListener(SearchInLocationActivityOnClickListener);
+        makeReviewButton.setOnClickListener(SearchInLocationActivityOnClickListener);
+        //fin
 
-
-
-
-       /* MapContainer.addView(mMapView);*/
-
-//        Window window = getWindow();
-//        //window.setContentView(R.layout.activity_search_in_location2);
-//
-//        LayoutInflater layoutInflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        LinearLayout linearLayout = (LinearLayout)layoutInflater.inflate(R.layout.over_search_in_location, null);
-//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-//                LinearLayout.LayoutParams.FILL_PARENT,
-//                LinearLayout.LayoutParams.FILL_PARENT);
-//
-//        window.addContentView(linearLayout, layoutParams);
-
-       // MapContainer.addView(mMapView);
 
     }
 
@@ -280,54 +255,69 @@ public class SearchInLocationActivity extends NMapActivity implements OnMapState
 
          
         public void onMapInitHandler(NMapView nMapView, NMapError nMapError) {
-
+            Log.d("SIL", "*21@" + mMapView.getHeight());
             if(nMapError == null){
+                Log.d("SIL", "*22@" + mMapView.getHeight());
                 mMapController.setMapCenter(Location.SEOUL, 11);
+                Log.d("SIL", "*23@" + mMapView.getHeight());
             } else{
-                Log.e("SearchInLocation","SearchInMocationOnMapStateChangeListener : error = "+nMapError.toString());
+                Log.d("SIL", "*24@" + mMapView.getHeight());
+                Log.e("SearchInLocation", "SearchInMocationOnMapStateChangeListener : error = " + nMapError.toString());
+                Log.d("SIL", "*25@" + mMapView.getHeight());
             }
 
         }
 
          
         public void onMapCenterChange(NMapView nMapView, NGeoPoint nGeoPoint) {
-
+            Log.d("SIL", "*31@" + mMapView.getHeight());
             currentLNG = nGeoPoint.getLongitude();
+            Log.d("SIL", "*32@" + mMapView.getHeight());
             currentLAT = nGeoPoint.getLatitude();
+            Log.d("SIL", "*33@" + mMapView.getHeight());
 
 
             NMapProjection nMapProjection = mMapView.getMapProjection();
+            Log.d("SIL", "*34@" + mMapView.getHeight());
 
             //NGeoPoint LT = nMapProjection.fromPixels(0,0);
             Log.d("SIL", "중심좌표의 위도 경도 : "+currentLNG+" ; "+currentLAT);
 
             DisplayMetrics displayMetrics = new DisplayMetrics();
+            Log.d("SIL", "*35@" + mMapView.getHeight());
             getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+            Log.d("SIL", "*36@" + mMapView.getHeight());
 
             displayCenterX = displayMetrics.widthPixels/2;
+            Log.d("SIL", "*37@" + mMapView.getHeight());
             displayCenterY = displayMetrics.heightPixels/2;
+            Log.d("SIL", "*38@" + mMapView.getHeight());
 
 
             currentPoint = nMapProjection.fromPixels(displayCenterX, displayCenterY);
+            Log.d("SIL", "*39@" + mMapView.getHeight());
 
             currentLNG = currentPoint.getLongitude();
+            Log.d("SIL", "*310@" + mMapView.getHeight());
             currentLAT = currentPoint.getLatitude();
+            Log.d("SIL", "*311@" + mMapView.getHeight());
 
         }
 
          
         public void onMapCenterChangeFine(NMapView nMapView) {
+            Log.d("SIL", "*41@" + mMapView.getHeight());
 
         }
 
          
         public void onZoomLevelChange(NMapView nMapView, int i) {
-
+            Log.d("SIL", "*51@" + mMapView.getHeight());
         }
 
          
         public void onAnimationStateChange(NMapView nMapView, int i, int i1) {
-
+            Log.d("SIL", "*61@" + mMapView.getHeight());
         }
     ///}
 
@@ -338,27 +328,27 @@ public class SearchInLocationActivity extends NMapActivity implements OnMapState
 
          
         public void onLongPress(NMapView nMapView, MotionEvent motionEvent) {
-
+            Log.d("SIL", "*71@" + mMapView.getHeight());
         }
 
          
         public void onLongPressCanceled(NMapView nMapView) {
-
+            Log.d("SIL", "*81@" + mMapView.getHeight());
         }
 
          
         public void onTouchDown(NMapView nMapView, MotionEvent motionEvent) {
-
+            Log.d("SIL", "*91@" + mMapView.getHeight());
         }
 
          
         public void onTouchUp(NMapView nMapView, MotionEvent motionEvent) {
-
+            Log.d("SIL", "*101@" + mMapView.getHeight());
         }
 
          
         public void onScroll(NMapView nMapView, MotionEvent motionEvent, MotionEvent motionEvent1) {
-
+            Log.d("SIL", "*111@" + mMapView.getHeight());
         }
 
          
@@ -376,12 +366,12 @@ public class SearchInLocationActivity extends NMapActivity implements OnMapState
 
          
         public void onFocusChanged(NMapPOIdataOverlay nMapPOIdataOverlay, NMapPOIitem nMapPOIitem) {
-
+            Log.d("SIL", "*121@" + mMapView.getHeight());
         }
 
          
         public void onCalloutClick(NMapPOIdataOverlay nMapPOIdataOverlay, NMapPOIitem nMapPOIitem) {
-
+            Log.d("SIL", "*131@" + mMapView.getHeight());
             //필요한부분!!!!
             Log.d("SIL", "POI data 눌렸다!!");
         }
@@ -395,7 +385,7 @@ public class SearchInLocationActivity extends NMapActivity implements OnMapState
 
          
         public NMapCalloutOverlay onCreateCalloutOverlay(NMapOverlay nMapOverlay, NMapOverlayItem nMapOverlayItem, Rect rect) {
-
+            Log.d("SIL", "*141@" + mMapView.getHeight());
             return new NMapCalloutBasicOverlay(nMapOverlay, nMapOverlayItem, rect);
         }
     ///}
@@ -410,18 +400,41 @@ public class SearchInLocationActivity extends NMapActivity implements OnMapState
 
          
         public View onCreateCalloutOverlayView(NMapOverlay nMapOverlay, NMapOverlayItem nMapOverlayItem, Rect rect) {
-
+            Log.d("SIL", "*151@" + mMapView.getHeight());
             if(nMapOverlayItem != null){
-
+                Log.d("SIL", "*161@" + mMapView.getHeight());
                 String title = nMapOverlayItem.getTitle();
-
+                Log.d("SIL", "*171@" + mMapView.getHeight());
                 if(title != null && title.length() > 0){
+                    Log.d("SIL", "*181@" + mMapView.getHeight());
                     return new NMapCalloutCustomOverlayView(SearchInLocationActivity.this, nMapOverlay, nMapOverlayItem, rect);
                 }
             }
+            Log.d("SIL", "*191@" + mMapView.getHeight());
             return null;
         }
     ///}
+
+
+
+
+
+    //////버튼 리스너
+    Button.OnClickListener SearchInLocationActivityOnClickListener = new View.OnClickListener(){
+
+        public void onClick(View v){
+
+            switch(v.getId()){
+
+                case R.id.search_in_location_go_back_button:
+                    finish();
+                    break;
+
+                case R.id.search_in_location_make_review_button:
+                    Toast.makeText(getApplicationContext(), "경도 : "+currentLNG+"\n위도 : "+currentLAT+"\n\n make a review??",Toast.LENGTH_LONG).show();
+            }
+        }
+    };
 
 }
 
