@@ -4,12 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
-
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/center_cross"></View>
-
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="center"
+        android:id="@+id/cross_overlay_view"
+        android:background="#0000"
+        android:src="@drawable/search_in_location_center_png" />
 </LinearLayout>
