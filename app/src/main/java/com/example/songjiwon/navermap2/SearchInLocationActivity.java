@@ -205,15 +205,32 @@ public class SearchInLocationActivity extends NMapActivity implements OnMapState
 
 
 
+    //overlay
+    Window window;
+    LayoutInflater layoutInflater;
+    LinearLayout linearLayout;
+    LinearLayout.LayoutParams layoutParams;
+
+
 
 
     public void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_search_in_location);
+        window = getWindow();
+
+        window.setContentView(R.layout.activity_search_in_location);
 
         MapContainer = (LinearLayout)findViewById(R.id.search_in_location_map);
+
+
+        layoutInflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        linearLayout = (LinearLayout)layoutInflater.inflate(R.layout.over_search_in_location, null);
+        layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.FILL_PARENT,
+                LinearLayout.LayoutParams.FILL_PARENT);
+        window.addContentView(linearLayout, layoutParams);
 
         mMapView = new NMapView(this);
         Log.d("SIL", "*15@" + mMapView.getHeight());
@@ -226,6 +243,7 @@ public class SearchInLocationActivity extends NMapActivity implements OnMapState
         Log.d("SIL", "*18@" + mMapView.getHeight());
 
 
+        //mMapView.setMinimumHeight(0);
 
 
         mMapView.setClickable(true);
@@ -233,6 +251,7 @@ public class SearchInLocationActivity extends NMapActivity implements OnMapState
 
         mMapView.setBuiltInZoomControls(true, null);
         Log.d("SIL", "*110@" + mMapView.getHeight());
+
 
         mMapView.setOnMapStateChangeListener(this);
         //mMapView.setOnMapViewTouchEventListener(this);
@@ -255,15 +274,18 @@ public class SearchInLocationActivity extends NMapActivity implements OnMapState
 
          
         public void onMapInitHandler(NMapView nMapView, NMapError nMapError) {
-            Log.d("SIL", "*21@" + mMapView.getHeight());
+
+            Log.d("SIL", "*21@" + mMapView.getHeight()+"    nMapView  : "+nMapView.getHeight());
             if(nMapError == null){
-                Log.d("SIL", "*22@" + mMapView.getHeight());
+                Log.d("SIL", "*22@" + mMapView.getHeight()+"    nMapView  : "+nMapView.getHeight());
                 mMapController.setMapCenter(Location.SEOUL, 11);
-                Log.d("SIL", "*23@" + mMapView.getHeight());
+
+
+                Log.d("SIL", "*23@" + mMapView.getHeight()+"    nMapView  : "+nMapView.getHeight());
             } else{
-                Log.d("SIL", "*24@" + mMapView.getHeight());
+                Log.d("SIL", "*24@" + mMapView.getHeight()+"    nMapView  : "+nMapView.getHeight());
                 Log.e("SearchInLocation", "SearchInMocationOnMapStateChangeListener : error = " + nMapError.toString());
-                Log.d("SIL", "*25@" + mMapView.getHeight());
+                Log.d("SIL", "*25@" + mMapView.getHeight()+"    nMapView  : "+nMapView.getHeight());
             }
 
         }
