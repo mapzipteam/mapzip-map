@@ -1,11 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/search_in_location_map_2"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/search_in_location_go_back_button"
+            android:layout_weight="2"
+            android:text="뒤로가기"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/search_in_location_textview"
+            android:layout_weight="1"
+            android:text="지도로 검색"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/search_in_location_make_review_button"
+            android:layout_weight="2"
+            android:text="리뷰작성"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/search_in_location_map2"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/cross_overlay_view"
+                android:src="@drawable/search_in_location_center_png" />
+    </RelativeLayout>
 
 </LinearLayout>

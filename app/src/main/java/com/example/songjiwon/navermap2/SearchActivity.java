@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -116,8 +117,10 @@ public class SearchActivity extends ListActivity {
 
     Button.OnClickListener searchButtonClcikListener = new View.OnClickListener(){
         public void onClick(View v){
+
             query = editText.getText().toString();
             startSearching();
+
         }
     };
 
@@ -148,6 +151,12 @@ public class SearchActivity extends ListActivity {
 
     Button.OnClickListener searchInLocationButtonClcikListener = new View.OnClickListener(){
         public void onClick(View v){
+            InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(editText.getWindowToken(),0);
+
+            editText.clearFocus();
+
+            editText.setSelectAllOnFocus(false);
 
             Intent intent = new Intent(getApplicationContext(), SearchInLocationActivity.class);
 
